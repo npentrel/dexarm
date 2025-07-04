@@ -1,0 +1,13 @@
+{
+  "module_name": "dexarm",
+  "namespace": "naomi",
+  "language": "python",
+  "resource_type": "component",
+  "resource_subtype": "arm",
+  "model_name": "dexarm",
+  "enable_cloud_build": true,
+  "initialize_git": false,
+  "generator_version": "0.1.0",
+  "generated_on": "2025-07-04T14:53:09.877058Z",
+  "module_readme_link": "README.md"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dl.viam.dev/module.schema.json",
+  "module_id": "naomi:dexarm",
+  "visibility": "public",
+  "url": "https://github.com/npentrel/dexarm",
+  "description": "Rotrics DexArm support - currently only supports the arm itself, without any end effectors.",
+  "models": [
+    {
+      "api": "rdk:component:arm",
+      "model": "naomi:dexarm:dexarm",
+      "short_description": "The arm model that supports moving the Rotrics DexArm.",
+      "markdown_link": "README.md#model-naomidexarmdexarm"
+    }
+  ],
+  "applications": null,
+  "markdown_link": "README.md",
+  "entrypoint": "dist/main",
+  "first_run": "",
+  "build": {
+    "build": "./build.sh",
+    "setup": "./setup.sh",
+    "path": "dist/archive.tar.gz",
+    "arch": [
+      "linux/amd64",
+      "linux/arm64",
+      "darwin/arm64",
+      "windows/amd64"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+pyserial
+viam-sdk==0.49.0
+viam-sdk[mlmodel]
+
+typing-extensions
+numpy
