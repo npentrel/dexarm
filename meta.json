@@ -10,6 +10,12 @@
       "model": "naomi:dexarm:dexarm",
       "short_description": "The arm model that supports moving the Rotrics DexArm.",
       "markdown_link": "README.md#model-naomidexarmdexarm"
+    },
+    {
+      "api": "rdk:component:gripper",
+      "model": "naomi:dexarm:rotary-gripper",
+      "short_description": "A gripper model for the Rotrics DexArm rotary soft gripper.",
+      "markdown_link": "README.md#model-naomidexarmrotary-gripper"
     }
   ],
   "applications": null,

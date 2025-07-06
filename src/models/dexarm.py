@@ -17,9 +17,9 @@ class Dexarm(Arm, EasyResource):
     # To enable debug-level logging, either run viam-server with the --debug option,
     # or configure your resource/machine to display debug logs.
     MODEL: ClassVar[Model] = Model(ModelFamily("naomi", "dexarm"), "dexarm")
-    port = ""
-    dexarm = None
-    moving = False
+    port: str = ""
+    dexarm: Pydexarm = None
+    moving: bool = False
 
     @classmethod
     def new(
@@ -133,6 +133,7 @@ class Dexarm(Arm, EasyResource):
     ):
         self.logger.info("Moving home")
         self.dexarm.go_home()
+        self.dexarm._send_cmd("M1000\r")
 
     async def is_moving(self) -> bool:
         self.logger.error("`is_moving` is not implemented. DexArms operate with a queue.")
@@ -155,8 +156,9 @@ class Dexarm(Arm, EasyResource):
         timeout: Optional[float] = None,
         **kwargs
     ) -> Mapping[str, ValueTypes]:
-        self.logger.error("`do_command` is not implemented")
-        raise NotImplementedError()
+        if "command" in command:
+            self.logger.info(f"Sending command: {command['command']}")
+            self.dexarm._send_cmd(command["command"] + "\r")
 
     async def get_geometries(
         self, *, extra: Optional[Dict[str, Any]] = None, timeout: Optional[float] = None

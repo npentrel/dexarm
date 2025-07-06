@@ -5,6 +5,11 @@ try:
 except ModuleNotFoundError:
     # when running as local module with run.sh
     from .models.dexarm import Dexarm
+try:
+    from models.rotary_gripper import RotaryGripper
+except ModuleNotFoundError:
+    # when running as local module with run.sh
+    from .models.rotary_gripper import RotaryGripper
 
 
 if __name__ == '__main__':
